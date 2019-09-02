@@ -16,4 +16,4 @@ server.on('listening', () => {
   console.log(`server listening ${address.address}:${address.port}`);
 });
 
-server.bind(settings.dstPort, settings.dstIp);
+server.bind(settings.SERVER_PORT, settings.SERVER_HOST);
