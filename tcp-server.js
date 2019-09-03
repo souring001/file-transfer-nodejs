@@ -1,25 +1,25 @@
 const net = require('net');
+const fs = require('fs');
 const settings = require('./settings');
+
+const fileStream = fs.createWriteStream('./files/dst/file1');
 
 const server = net.createServer((socket) => {
   // 'connection' listener
   const clientAddress = socket.remoteAddress + ':' + socket.remotePort;
   console.log('client connected from ' + clientAddress);
 
-  socket.on('end', () => {
-    console.log('client disconnected');
-  });
-  socket.write('hello ');
-
-  socket.on('data', (data) => {
-    socket.write(data);
-    socket.write('!');
-  });
+  socket.pipe(fileStream);
 
   socket.on('end', () => {
     socket.end();
+    console.log('client disconnected');
   });
-  // c.pipe(c);
+
+  socket.on('data', (data) => {
+    console.log(data);
+    // socket.write(data);
+  });
 });
 
 server.on('error', (err) => {
