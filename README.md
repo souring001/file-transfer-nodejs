@@ -1,4 +1,4 @@
-# nodejs-ignore-protocol
+# file-transfer-nodejs
 File transfer server/client using TCP/UDP in Node.js
 
 
