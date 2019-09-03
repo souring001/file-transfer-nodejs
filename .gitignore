@@ -1,1 +1,4 @@
 settings.js
+.DS_Store
+files/dst/*
+files/src/*
