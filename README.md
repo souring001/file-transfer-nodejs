@@ -2,7 +2,7 @@
 File transfer server/client using TCP/UDP in Node.js
 
 
-## get started
+## Getting started
 Create `settings.js`.
 
 ```js
@@ -17,7 +17,7 @@ Create `dst` directory.
 mkdir files/dst
 ```
 
-## run
+## Usage
 
 TCP
 ```bash
